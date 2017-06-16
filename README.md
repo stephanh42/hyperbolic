@@ -51,7 +51,7 @@ Here are some rules which old for all possible grids.
 And here are rules for regular grids with polygons with p edges, where q edges come together at any corner.
 Note on the notation: something like a<sup>3</sup> means aaa.
 
-* a<sup>p</sup> = ε 
+* b<sup>p</sup> = ε 
    (If you rotate around the entire tile, you get back at the beginning.)
 
 * (ab)<sup>q</sup> = ε 
