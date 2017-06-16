@@ -62,7 +62,7 @@ Now we can apply those rules on some path, concluding that for (p, q) = (7, 3) t
 abaab. But we really want to produce somehow a *canonical* path given any path. How to do this?
 
 Well, I will not go into details but there is an algorithm, 
-called [Knuth-Bendix](https://en.wikipedia.org/wiki/Knuth%E2%80%93Bendix_completion_algorithm]), which will solve this problem for us.
+called [Knuth-Bendix](https://en.wikipedia.org/wiki/Knuth%E2%80%93Bendix_completion_algorithm), which will solve this problem for us.
 It produces, given a bunch of rules such as the above, a set of *confluent rewriting rules*. That means that if
 you apply each of these rules repeatedly until no one of them applies any more, you are guaranteed to have produced
 a canonical form for the path. 
