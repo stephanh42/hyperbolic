@@ -3,7 +3,7 @@ Confluent term rewriting rules for some hyperbolic Von Dyck groups.
 
 ![Tiling for Von Dyck group with p = 7, q = 3](tiling73.png)
 
-In case the only words you understood in above description are ``for'' and ``some'',
+In case the only words you understood in above description are "for" and "some",
 here is the basic idea.
 
 The [hyperbolic plane](https://en.wikipedia.org/wiki/Hyperbolic_geometry) is a form of non-Euclidian space. It's a space with a uniform
