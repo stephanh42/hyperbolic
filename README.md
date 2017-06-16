@@ -42,7 +42,7 @@ Well, ley's first recap the operations e have and give them names:
 The convention here is that the upper-case operation is the inverse of the lower-case operation.
 Note that operation a is its own inverse (try it out on your tile floor) so we don't need A.
 
-Here are some rules which old for all possible grids.
+Here are some rules which hold for all possible grids.
 
 * bB = ε (ε is the empty path, i.e. no operations at all)
 * Bb = ε 
