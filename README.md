@@ -87,3 +87,17 @@ p = 8, q = 3: ![p = 8, q = 3](tiling83.png)
 p = 8, q = 4: ![p = 8, q = 4](tiling84.png)
 
 p = 8, q = 8: ![p = 8, q = 8](tiling88.png)
+
+## Fundamental triangle
+
+For a regular grid of polygons, the *fundamental triangle* is the triangle ABC between the following points:
+
+* (A) The center of a tile.
+* (B) The center of some *edge* on the same tile as A.
+* (C) One corner on the same edge as B.
+
+Note that the angle at point B will be 90°, so it is a straight triangle.
+It is useful to know the distances AB and AC given the grid parameters p and q.
+
+* distance AB = arccosh(cos(π/q) / sin(π/p))
+* distance AC = arccosh(1 / (tan(π/p) * tan(π/q) )
