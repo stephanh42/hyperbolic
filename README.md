@@ -1,7 +1,7 @@
 # hyperbolic
 Confluent term rewriting rules for some hyperbolic Von Dyck groups.
 
-[Tiling for Von Dyck group with p = 7, q = 3](tiling73.png)
+![Tiling for Von Dyck group with p = 7, q = 3](tiling73.png)
 
 In case the only words you understood in above description are ``for'' and ``some'',
 here is the basic idea.
