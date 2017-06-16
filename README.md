@@ -7,7 +7,7 @@ In case the only words you understood in above description are "for" and "some",
 here is the basic idea.
 
 The [hyperbolic plane](https://en.wikipedia.org/wiki/Hyperbolic_geometry) is a form of non-Euclidian space. It's a space with a uniform
-``negative curvature''. I am not going into detail about it (Google it) but it's cool ;-).
+"negative curvature". I am not going into detail about it (Google it) but it's cool ;-).
 
 ## Von Dyck groups
 
@@ -20,7 +20,7 @@ Basically, ever trip an any such grid can be described by three operations:
 3. Turn one tile to the right.
 
 However, if we are using tiles with an odd number of edges (say, triangles or pentagons), 
-then ``Step one tile forward'' will leave us not pointing at another tile.
+then "Step one tile forward" will leave us not pointing at another tile.
 
 So there's a trick: rather than let the operation be "Step one tile forward", let it be
 "Step one tile forward and immediately turn 180°". In that way, you are guaranteed to be facing
@@ -99,5 +99,40 @@ For a regular grid of polygons, the *fundamental triangle* is the triangle ABC b
 Note that the angle at point B will be 90°, so it is a straight triangle.
 It is useful to know the distances AB and AC given the grid parameters p and q.
 
-* distance AB = arccosh(cos(π/q) / sin(π/p))
-* distance AC = arccosh(1 / (tan(π/p) * tan(π/q) )
+* distance AB = acosh(cos(π/q) / sin(π/p))
+* distance AC = acosh(1 / (tan(π/p) * tan(π/q) ) )
+
+## Coordinates and distances on the hyperbolic plane
+
+Points on the hyperbolic plane can be represented by
+a triple (x, y, z) ∈ ℝ<sup>3</sup>, which must satisfy
+
+-x<sup>2</sup> - y<sup>2</sup> + z<sup>2</sup> = 1.
+
+Note that this is analogous to representing points on the sphere by (x, y, z) ∈ ℝ<sup>3</sup> which
+satisfy x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> = 1. In both cases, alternative coordinate systems
+exist (e.g. latitude/longitude), but the presented one has some advantages:
+
+1. There are no singularities. (In latitude/longitude systems: what is the longitude of the north pole?)
+2. All distance-preserving transformations can be represented as 3x3 matrices.
+
+The origin is at the point (0, 0, 1). A rotation of φ around the origin is represented by the matrix
+```
+        ⎧  cos φ  sin φ  0 ⎫
+ R(φ) = ⎪ -sin φ  cos φ  0 ⎪
+        ⎩    0      0    1 ⎭
+```
+
+Similarly, a translation over distance d in the x direction is represented by
+```
+        ⎧ cosh d  0  sinh d ⎫
+ T(d) = ⎪   0     1    0    ⎪
+        ⎩ sinh d  0  cosh d ⎭
+```
+
+Given a tiling with parameters p and q, we can now establish the corresponding matrices for each of the operations a, b, and B:
+```
+   M(a) = R(π) * T(2 acosh(cos(π/q) / sin(π/p)))
+   M(b) = R(2π/p)
+   M(B) = R(-2π/p)
+```
