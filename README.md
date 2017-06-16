@@ -1,6 +1,8 @@
 # hyperbolic
 Confluent term rewriting rules for some hyperbolic Von Dyck groups.
 
+[Tiling for Von Dyck group with p = 7, q = 3](tiling73.png)
+
 In case the only words you understood in above description are ``for'' and ``some'',
 here is the basic idea.
 
@@ -53,7 +55,7 @@ Note on the notation: something like a<sup>3</sup> means aaa.
    (If you rotate around the entire tile, you get back at the beginning.)
 
 * (ab)<sup>q</sup> = ε 
-   (The operation ab is a roation around a corner. Try it on your tile floor! Doing it q times will leave you back
+   (The operation ab is a rotation around a corner. Try it on your tile floor! Doing it q times will leave you back
      at the beginning.)
 
 Now we can apply those rules on some path, concluding that for (p, q) = (7, 3) the path bAAbA is equivalent to
@@ -61,7 +63,7 @@ abaab. But we really want to produce somehow a *canonical* path given any path. 
 
 Well, I will not go into details but there is an algorithm, 
 called [Knuth-Bendix](https://en.wikipedia.org/wiki/Knuth%E2%80%93Bendix_completion_algorithm]), which will solve this problem for us.
-It produces, given abunch of rules such as the above, a set of *confluent rewriting rules*. That means that if
+It produces, given a bunch of rules such as the above, a set of *confluent rewriting rules*. That means that if
 you apply each of these rules repeatedly until no one of them applies any more, you are guaranteed to have produced
 a canonical form for the path. 
 
@@ -72,10 +74,16 @@ The rules are described for a few possible values for p and q in the hyperbolic.
 ## The tilings
 
 Here are pictures of all the provided tilings.
+These are drawn using the [Poincaré disk model](https://en.wikipedia.org/wiki/Poincar%C3%A9_disk_model).
 
 p = 4, q = 5: ![p = 4, q = 5](tiling45.png)
+
 p = 5, q = 4: ![p = 5, q = 4](tiling54.png)
+
 p = 7, q = 3: ![p = 7, q = 3](tiling73.png)
+
 p = 8, q = 3: ![p = 8, q = 3](tiling83.png)
+
 p = 8, q = 4: ![p = 8, q = 4](tiling84.png)
+
 p = 8, q = 8: ![p = 8, q = 8](tiling88.png)
