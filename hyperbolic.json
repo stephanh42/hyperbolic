@@ -4,48 +4,48 @@
     "p": 4, 
     "rules": [
       [
-        "aA", 
+        "bB", 
         ""
       ], 
       [
-        "Aa", 
+        "Bb", 
         ""
       ], 
       [
-        "bb", 
+        "aa", 
         ""
       ], 
       [
-        "B", 
-        "b"
+        "A", 
+        "a"
       ], 
       [
-        "aaa", 
-        "A"
+        "bbb", 
+        "B"
       ], 
       [
-        "AA", 
-        "aa"
+        "BB", 
+        "bb"
       ], 
       [
-        "babab", 
-        "AbAbA"
+        "ababa", 
+        "BaBaB"
       ], 
       [
-        "bAbAb", 
-        "ababa"
+        "aBaBa", 
+        "babab"
       ], 
       [
-        "babaababa", 
-        "AbAbaabAb"
+        "ababbabab", 
+        "BaBabbaBa"
       ], 
       [
-        "bAbaabAbA", 
-        "ababaabab"
+        "aBabbaBaB", 
+        "bababbaba"
       ], 
       [
-        "bAbaabAbaa", 
-        "ababaababA"
+        "aBabbaBabb", 
+        "bababbabaB"
       ]
     ]
   }, 
@@ -54,60 +54,60 @@
     "p": 7, 
     "rules": [
       [
-        "aA", 
+        "bB", 
         ""
       ], 
       [
-        "Aa", 
+        "Bb", 
         ""
       ], 
       [
-        "bb", 
+        "aa", 
         ""
       ], 
       [
-        "B", 
-        "b"
+        "A", 
+        "a"
       ], 
       [
-        "bab", 
-        "AbA"
+        "aba", 
+        "BaB"
       ], 
       [
-        "aaaa", 
-        "AAA"
+        "bbbb", 
+        "BBB"
       ], 
       [
-        "AAAA", 
-        "aaa"
+        "BBBB", 
+        "bbb"
       ], 
       [
-        "bAb", 
-        "aba"
+        "aBa", 
+        "bab"
       ], 
       [
-        "baaba", 
-        "AbAAb"
+        "abbab", 
+        "BaBBa"
       ], 
       [
-        "bAAbA", 
-        "abaab"
+        "aBBaB", 
+        "babba"
       ], 
       [
-        "AbAAbaaa", 
-        "baabAAA"
+        "BaBBabbb", 
+        "abbaBBB"
       ], 
       [
-        "abaabAAA", 
-        "bAAbaaa"
+        "babbaBBB", 
+        "aBBabbb"
       ], 
       [
-        "AAAbaabAAA", 
-        "aaabAAbaaa"
+        "BBBabbaBBB", 
+        "bbbaBBabbb"
       ], 
       [
-        "bAAbaaabAAbaaa", 
-        "abaabAAbaabAAA"
+        "aBBabbbaBBabbb", 
+        "babbaBBabbaBBB"
       ]
     ]
   }, 
@@ -116,48 +116,48 @@
     "p": 8, 
     "rules": [
       [
-        "aA", 
+        "bB", 
         ""
       ], 
       [
-        "Aa", 
+        "Bb", 
         ""
       ], 
       [
-        "bb", 
+        "aa", 
         ""
       ], 
       [
-        "B", 
-        "b"
+        "A", 
+        "a"
       ], 
       [
-        "bab", 
-        "AbA"
+        "aba", 
+        "BaB"
       ], 
       [
-        "aaaaa", 
-        "AAA"
+        "bbbbb", 
+        "BBB"
       ], 
       [
-        "AAAA", 
-        "aaaa"
+        "BBBB", 
+        "bbbb"
       ], 
       [
-        "bAb", 
-        "aba"
+        "aBa", 
+        "bab"
       ], 
       [
-        "baaba", 
-        "AbAAb"
+        "abbab", 
+        "BaBBa"
       ], 
       [
-        "bAAbA", 
-        "abaab"
+        "aBBaB", 
+        "babba"
       ], 
       [
-        "bAAbaaaa", 
-        "abaabAAA"
+        "aBBabbbb", 
+        "babbaBBB"
       ]
     ]
   }, 
@@ -166,40 +166,40 @@
     "p": 8, 
     "rules": [
       [
-        "aA", 
+        "bB", 
         ""
       ], 
       [
-        "Aa", 
+        "Bb", 
         ""
       ], 
       [
-        "bb", 
+        "aa", 
         ""
       ], 
       [
-        "B", 
-        "b"
+        "A", 
+        "a"
       ], 
       [
-        "aaaaa", 
-        "AAA"
+        "bbbbb", 
+        "BBB"
       ], 
       [
-        "AAAA", 
-        "aaaa"
+        "BBBB", 
+        "bbbb"
       ], 
       [
-        "bAbA", 
-        "abab"
+        "aBaB", 
+        "baba"
       ], 
       [
-        "baba", 
-        "AbAb"
+        "abab", 
+        "BaBa"
       ], 
       [
-        "bAbaaaa", 
-        "ababAAA"
+        "aBabbbb", 
+        "babaBBB"
       ]
     ]
   }, 
@@ -208,40 +208,40 @@
     "p": 8, 
     "rules": [
       [
-        "aA", 
+        "bB", 
         ""
       ], 
       [
-        "Aa", 
+        "Bb", 
         ""
       ], 
       [
-        "bb", 
+        "aa", 
         ""
       ], 
       [
-        "B", 
-        "b"
+        "A", 
+        "a"
       ], 
       [
-        "aaaaa", 
-        "AAA"
+        "bbbbb", 
+        "BBB"
       ], 
       [
-        "AAAA", 
-        "aaaa"
+        "BBBB", 
+        "bbbb"
       ], 
       [
-        "bAbAbAbA", 
-        "abababab"
+        "aBaBaBaB", 
+        "babababa"
       ], 
       [
-        "babababa", 
-        "AbAbAbAb"
+        "abababab", 
+        "BaBaBaBa"
       ], 
       [
-        "bAbAbAbaaaa", 
-        "ababababAAA"
+        "aBaBaBabbbb", 
+        "babababaBBB"
       ]
     ]
   }, 
@@ -250,52 +250,52 @@
     "p": 5, 
     "rules": [
       [
-        "aA", 
+        "bB", 
         ""
       ], 
       [
-        "Aa", 
+        "Bb", 
         ""
       ], 
       [
-        "bb", 
+        "aa", 
         ""
       ], 
       [
-        "B", 
-        "b"
+        "A", 
+        "a"
       ], 
       [
-        "aaa", 
-        "AA"
+        "bbb", 
+        "BB"
       ], 
       [
-        "AAA", 
-        "aa"
+        "BBB", 
+        "bb"
       ], 
       [
-        "bAbA", 
-        "abab"
+        "aBaB", 
+        "baba"
       ], 
       [
-        "baba", 
-        "AbAb"
+        "abab", 
+        "BaBa"
       ], 
       [
-        "ababAA", 
-        "bAbaa"
+        "babaBB", 
+        "aBabb"
       ], 
       [
-        "AbAbaa", 
-        "babAA"
+        "BaBabb", 
+        "abaBB"
       ], 
       [
-        "AAbabAA", 
-        "aabAbaa"
+        "BBabaBB", 
+        "bbaBabb"
       ], 
       [
-        "bAbaabAbaa", 
-        "ababAbabAA"
+        "aBabbaBabb", 
+        "babaBabaBB"
       ]
     ]
   }
