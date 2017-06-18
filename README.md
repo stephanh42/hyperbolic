@@ -166,9 +166,9 @@ We can turn these 2x2 matrices back in our "ordinary" 3x3 matrices with the foll
 
 A rotation of φ around the origin is represented by the 2x2 matrix
 ```
-         ⎧  cos(φ/2)  sin(φ/2)  ⎫
- R'(φ) = ⎪                      ⎪
-         ⎩ -sin(φ/2)  cos(φ/2)  ⎭
+         ⎧  cos(φ/2)  sin(φ/2) ⎫
+ R'(φ) = ⎪                     ⎪
+         ⎩ -sin(φ/2)  cos(φ/2) ⎭
 ```
 
 Similarly, a translation over distance d in the x direction is represented by
