@@ -136,3 +136,44 @@ Given a tiling with parameters p and q, we can now establish the corresponding m
    M(b) = R(2π/p)
    M(B) = R(-2π/p)
 ```
+
+## Representing transformations by hyperquats
+
+Rotations of the sphere are often represented by (unit) quaternions. 
+There is a similar concept of the hyperbolic plane, namely [hyperquat(ernion)s](https://en.wikipedia.org/wiki/Hyperbolic_quaternion).
+
+Interestingly, the unit hyperquats can in turn be represented by 2x2 real matrices with determinant 1, i.e.
+matrices of the following form:
+```
+    ⎧a  b⎫
+A = ⎪    ⎪ ,    with a⋅d - b⋅c = 1.
+    ⎩c  d⎭
+```
+We can turn these 2x2 matrices back in our "ordinary" 3x3 matrices with the following function M : ℝ<sup>2x2</sup> → ℝ<sup>3x3</sup>.
+```
+            ⎧a⋅d + b⋅c        -a⋅c + b⋅d             a⋅c + b⋅d     ⎫
+            ⎪                                                      ⎪
+            ⎪               2    2    2    2       2    2    2    2⎪
+            ⎪              a    b    c    d       a    b    c    d ⎪
+     M(A) = ⎪-a⋅b + c⋅d    ── - ── - ── + ──    - ── - ── + ── + ──⎪
+            ⎪              2    2    2    2       2    2    2    2 ⎪
+            ⎪                                                      ⎪
+            ⎪                2    2    2    2     2    2    2    2 ⎪
+            ⎪               a    b    c    d     a    b    c    d  ⎪
+            ⎪a⋅b + c⋅d    - ── + ── - ── + ──    ── + ── + ── + ── ⎪
+            ⎩               2    2    2    2     2    2    2    2  ⎭
+```
+
+A rotation of φ around the origin is represented by the 2x2 matrix
+```
+         ⎧  cos(φ/2)  sin(φ/2)  ⎫
+ R'(φ) = ⎪                      ⎪
+         ⎩ -sin(φ/2)  cos(φ/2)  ⎭
+```
+
+Similarly, a translation over distance d in the x direction is represented by
+```
+         ⎧ cosh(d/2)  sinh(d/2) ⎫
+ T'(d) = ⎪                      ⎪
+         ⎩ sinh(d/2)  cosh(d/2) ⎭
+```
