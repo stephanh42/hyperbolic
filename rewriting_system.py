@@ -1,3 +1,7 @@
+"""
+Check normalization of a path on a hyperbolic tile grid.
+"""
+
 import json
 import os.path
 import re
@@ -81,12 +85,25 @@ path - string containing of a, b, A, B, with:
         B   - rotate one tile to the right
 """
 
+explanation = """Note:
+The original and the normalized path should have (approximately)
+the same matrix if normalization is correct, although they may
+differ to a factor -1, i.e. one is the negative of the other."""
+
+def matrix_diff(m1, m2):
+    return numpy.abs(m1-m2).max()
+
 def main():
     import sys
-    if len(sys.argv) != 4:
+    import random
+    if len(sys.argv) == 4:
+        p, q, path = sys.argv[1:]
+    elif len(sys.argv) == 3:
+        p, q = sys.argv[1:]
+        path = "a".join("".join(random.choice("bB") for j in range(random.randrange(1, int(p)))) for i in range(30))
+    else:
         sys.stderr.write(usage.format(sys.argv[0]))
         sys.exit(1)
-    p, q, path = sys.argv[1:]
     p = int(p); q = int(q)
     key = TilingKey(p, q)
     try:
@@ -98,11 +115,17 @@ def main():
             sys.stderr.write("p={}, q={}\n".format(p, q))
         sys.exit(1)
     bpath = path.encode("ASCII")
-    print("M({}) =\n{}".format(path, key.matrix_of_path(bpath)))
+    m1 = key.matrix_of_path(bpath)
+    print("Original path: {}\nmatrix:\n{}".format(path, m1))
     bpath2 = ruleset.normalize(bpath)
     path2 = bpath2.decode("ASCII")
-    print(path2)
-    print("M({}) =\n{}".format(path2, key.matrix_of_path(bpath2)))
+    m2 = key.matrix_of_path(bpath2)
+    print("Normalized path: {}\nmatrix:\n{}".format(path2, m2))
+    err = min(matrix_diff(m1, m2), matrix_diff(m1, -m2))
+    print("Error: {}".format(err))
+    print(explanation)
+
+
 
 if __name__ == "__main__":
     main()
