@@ -140,7 +140,10 @@ Given a tiling with parameters p and q, we can now establish the corresponding m
 ## Representing transformations by hyperquats
 
 Rotations of the sphere are often represented by (unit) quaternions. 
-There is a similar concept of the hyperbolic plane, namely [hyperquat(ernion)s](https://en.wikipedia.org/wiki/Hyperbolic_quaternion).
+There is a similar concept of the hyperbolic plane, namely [hyperquat(ernion)s](https://en.wikipedia.org/wiki/Split-quaternion).
+(Note on naming: the terminology for these things is not really standardized. 
+Wikipedia calls them split quaternions. Others (including me) call them hyperbolic quaternions
+because they are the exact hyperbolic analogue of the "normal" quaternions on a sphere.)
 
 Interestingly, the unit hyperquats can in turn be represented by 2x2 real matrices with determinant 1, i.e.
 matrices of the following form:
