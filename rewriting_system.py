@@ -76,13 +76,14 @@ class RewritingSystem(object):
 rules = RewritingSystem.load_rules(os.path.join(os.path.dirname(__file__), "hyperbolic.json"))
 
 usage = """Normalize path on hyperbolic tile grid
-Usage: {} p q path
+Usage: {} p q [path]
 p    - number of edges of each tile
 q    - number of edges which come together in each corner
 path - string containing of a, b, A, B, with:
         a,A - move one tile forward, then turn 180°
         b   - rotate one tile to the left
         B   - rotate one tile to the right
+       If "path" is not given, a random path is generated.
 """
 
 explanation = """Note:

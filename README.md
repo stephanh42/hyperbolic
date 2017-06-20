@@ -67,7 +67,8 @@ It produces, given a bunch of rules such as the above, a set of *confluent rewri
 you apply each of these rules repeatedly until no one of them applies any more, you are guaranteed to have produced
 a canonical form for the path. 
 
-I used [CoCalc](https://cocalc.com) to do the calculations for me. Since they took some time, I decided to save the results here ;-).
+I used [SageMath](http://www.sagemath.org) to do the calculations for me. Since they took some time, I decided to save the results here ;-).
+The SageMath worksheet is in the file [Von Dyck groups.ipynb](Von%20Dyck%20groups.ipynb).
 
 The rules are described for a few possible values for p and q in the hyperbolic.json file. Basically, this is just a bunch of string substitutions you have to run until no further applies.
 
@@ -149,23 +150,25 @@ Interestingly, the unit hyperquats can in turn be represented by 2x2 real matric
 matrices of the following form:
 ```
     ⎧a  b⎫
-A = ⎪    ⎪ ,    with a⋅d - b⋅c = 1.
+A = ⎪    ⎪ ,    with a*d - b*c = 1.
     ⎩c  d⎭
 ```
 We can turn these 2x2 matrices back in our "ordinary" 3x3 matrices with the following function M : ℝ<sup>2x2</sup> → ℝ<sup>3x3</sup>.
 ```
-            ⎧a⋅d + b⋅c        -a⋅c + b⋅d             a⋅c + b⋅d     ⎫
-            ⎪                                                      ⎪
-            ⎪               2    2    2    2       2    2    2    2⎪
-            ⎪              a    b    c    d       a    b    c    d ⎪
-     M(A) = ⎪-a⋅b + c⋅d    ── - ── - ── + ──    - ── - ── + ── + ──⎪
-            ⎪              2    2    2    2       2    2    2    2 ⎪
-            ⎪                                                      ⎪
-            ⎪                2    2    2    2     2    2    2    2 ⎪
-            ⎪               a    b    c    d     a    b    c    d  ⎪
-            ⎪a⋅b + c⋅d    - ── + ── - ── + ──    ── + ── + ── + ── ⎪
-            ⎩               2    2    2    2     2    2    2    2  ⎭
+            ⎧ a*d + b*c         -a*c + b*d                 a*c + b*d        ⎫
+            ⎪                                                               ⎪
+            ⎪                 2    2    2    2           2    2    2    2   ⎪
+     M(A) = ⎪-a*b + c*d     (a  - b  - c  + d )/2    (- a  - b  + c  + d )/2⎪
+            ⎪                                                               ⎪
+            ⎪                 2    2    2    2           2    2    2    2   ⎪
+            ⎪ a*b + c*d   (- a  + b  - c  + d )/2      (a  + b  + c  + d )/2⎪
+            ⎩                                                               ⎭ 
 ```
+Note that M(A) = M(-A). That means that the hyperquats form a *double cover*
+of the transformations of hyperbolic space, i.e. for every transformation
+M(A), there are exactly two corresponding hyperquats A and -A. 
+Again, this is similar with how the ordinary quats form a double cover
+of all the rotations of the sphere.
 
 A rotation of φ around the origin is represented by the 2x2 matrix
 ```
@@ -179,4 +182,39 @@ Similarly, a translation over distance d in the x direction is represented by
          ⎧ cosh(d/2)  sinh(d/2) ⎫
  T'(d) = ⎪                      ⎪
          ⎩ sinh(d/2)  cosh(d/2) ⎭
+```
+
+
+## Python example code
+
+There is Python example code in [rewriting_system.py](rewriting_system.py).
+Usage:
+```
+    python3 rewriting_system.py p q [rules]
+```
+* p -  number of edges of each tile
+* q  - number of edges which come together in each corner
+* path - string containing of a, b, A, B, with:
+   -    a,A - move one tile forward, then turn 180°
+   - b   - rotate one tile to the left
+   - B   - rotate one tile to the right
+
+If "path" is not given, a random path is generated.
+
+This will generate a result similar to this.
+```
+$ python3 rewriting_system.py 7 3
+Original path: bBaBBBaBaBbBBabbbBBbaBbBBababBBabaBbbababbbaBBaBBbaBbBBbBaBBabaBbbBbbaBabbbaBaBBbBaBbbabBBbbababbbaBBBbBbaBaBbbaBB
+matrix:
+[[ -5.18041339 -22.61665683]
+ [ -0.21128967  -1.11548355]]
+Normalized path: baBBBaBBBaBBBabbbaBBBaBB
+matrix:
+[[ -5.18041339 -22.61665683]
+ [ -0.21128967  -1.11548355]]
+Error: 6.039613253960852e-14
+Note:
+The original and the normalized path should have (approximately)
+the same matrix if normalization is correct, although they may
+differ to a factor -1, i.e. one is the negative of the other.
 ```
