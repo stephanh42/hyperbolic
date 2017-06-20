@@ -191,9 +191,35 @@ The most general form of a 2x2 matrix with determinant 1 is given by
                                ⎩-sin(ϕ)*cosh(s) + cos(θ)*sinh(s)  sin(θ)*sinh(s) + cos(ϕ)*cosh(s)⎭
 ```
 for arbitrary φ, s, θ ∈ ℝ. Note that in general such a matrix can be considered as a rotation over an arbitrary
-angle φ+θ, then a translation over an arbitrary distance 2*s, and finally another rotation over
+angle φ+θ, then a translation over an arbitrary distance 2\*s, and finally another rotation over
 an arbitrary angle φ-θ.
 
+## Dual grids
+
+If you have a regular grid (p, q), then the grid (q, p) is called its *dual*.
+The tables in hyperbolic.json for example don't contain an entry for (3, 7) but you
+can adapt the tables for (7, 3) to work for you.
+
+The trick is as follows: assume a, b satisfy the equations for (p, q):
+* a<sup>2</sup> = ε,   
+* b<sup>p</sup> = ε,   
+* (ab)<sup>q</sup> = ε.
+
+Note that if we take b' = ab, then a, b' satisfy the equations for (q, p):
+* a<sup>2</sup> = ε,   
+* b'<sup>q</sup> = (ab)<sup>q</sup> = ε,   
+* (ab')<sup>p</sup> = b<sup>p</sup> = ε.
+
+The matrices MD corresponding to the dual are as follows.
+```
+   MD(a) = R(π) * T(2 acosh(cos(π/p) / sin(π/q)))
+   MD(b') = MD(ab) = R(2π/q)
+   MD(B') = MD(Ba) = R(-2π/q)
+
+   MD(b) = MD(aab) = MD(ab) * MD(a) = R(π+2π/q) * T(2 acosh(cos(π/p) / sin(π/q)))
+   MD(B) = MD(Baa) = MD(a) * MD(Ba) = T(2 acosh(cos(π/p) / sin(π/q))) * R(π-2π/q)
+```
+Note that, in general, M(a) ≠ MD(a) and M(b) ≠ MD(b), except when p = q.
 
 ## Python example code
 
