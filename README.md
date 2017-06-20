@@ -200,7 +200,7 @@ an arbitrary angle φ-θ.
 There is Python example code in [rewriting_system.py](rewriting_system.py).
 Usage:
 ```
-    python3 rewriting_system.py p q [rules]
+    python3 rewriting_system.py p q [path]
 ```
 * p -  number of edges of each tile
 * q  - number of edges which come together in each corner
