@@ -184,6 +184,16 @@ Similarly, a translation over distance d in the x direction is represented by
          ⎩ sinh(d/2)  cosh(d/2) ⎭
 ```
 
+The most general form of a 2x2 matrix with determinant 1 is given by
+```
+                               ⎧-sin(θ)*sinh(s) + cos(ϕ)*cosh(s)  sin(ϕ)*cosh(s) + cos(θ)*sinh(s)⎫
+ R'(ϕ-θ) * T'(2*s) * R'(ϕ+θ) = ⎪                                                                 ⎪
+                               ⎩-sin(ϕ)*cosh(s) + cos(θ)*sinh(s)  sin(θ)*sinh(s) + cos(ϕ)*cosh(s)⎭
+```
+for arbitrary φ, s, θ ∈ ℝ. Note that in general such a matrix can be considered as a rotation over an arbitrary
+angle φ+θ, then a translation over an arbitrary distance 2*s, and finally another rotation over
+an arbitrary angle φ-θ.
+
 
 ## Python example code
 
