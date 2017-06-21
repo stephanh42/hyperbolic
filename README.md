@@ -212,12 +212,13 @@ Note that if we take b' = ab, then a, b' satisfy the equations for (q, p):
 
 The matrices MD corresponding to the dual are as follows.
 ```
-   MD(a) = R(π) * T(2 acosh(cos(π/p) / sin(π/q)))
+   d = 2 acosh(cos(π/p) / sin(π/q))
+   MD(a) = R(π) * T(d)
    MD(b') = MD(ab) = R(2π/q)
    MD(B') = MD(Ba) = R(-2π/q)
 
-   MD(b) = MD(aab) = MD(ab) * MD(a) = R(π+2π/q) * T(2 acosh(cos(π/p) / sin(π/q)))
-   MD(B) = MD(Baa) = MD(a) * MD(Ba) = T(2 acosh(cos(π/p) / sin(π/q))) * R(π-2π/q)
+   MD(b) = MD(aab) = MD(ab) * MD(a) = R(π+2π/q) * T(d)
+   MD(B) = MD(Baa) = MD(a) * MD(Ba) = T(-d) * R(π-2π/q)
 ```
 Note that, in general, M(a) ≠ MD(a) and M(b) ≠ MD(b), except when p = q.
 
