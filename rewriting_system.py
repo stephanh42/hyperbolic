@@ -27,21 +27,30 @@ def T(d):
 class TilingKey(namedtuple("TilingKey", "p q")):
     unit_matrix = numpy.eye(2)
 
-    def d(self):
-        return 2*numpy.arccosh(numpy.cos(π/self.q) / numpy.sin(π/self.p))
+    def d(self, p, q):
+        return 2*numpy.arccosh(numpy.cos(π/q) / numpy.sin(π/p))
 
-    def φ(self):
-        return 2*π/self.p
+    def φ(self, p):
+        return 2*π/p
 
     def matrices(self):
-        m_a = R(π) @ T(self.d())
-        φ = self.φ()
+        m_a = R(π) @ T(self.d(self.p, self.q))
+        φ = self.φ(self.p)
         m_b = R(φ)
         m_B = R(-φ)
-        return {ord("a"): m_a, ord("A"): m_a, ord("b"): m_b, ord("B"): m_B}
+        return {"a": m_a, "A": m_a, "b": m_b, "B": m_B}
 
-    def matrix_of_path(self, path):
-        matrices = self.matrices()
+    def dual_matrices(self):
+        d = self.d(self.q, self.p)
+        Td = T(d)
+        md_a = R(π) @ Td
+        φ = self.φ(self.q)
+        md_b = R(π+2*π/self.q) @ Td
+        md_B = T(-d) @ R(π-2*π/self.q) 
+        return {"a": md_a, "A": md_a, "b": md_b, "B": md_B}
+
+    def matrix_of_path(self, path, dual=False):
+        matrices = self.dual_matrices() if dual else self.matrices()
         result = self.unit_matrix
         for step in path:
             result = matrices[step] @ result
@@ -61,9 +70,9 @@ class RewritingSystem(object):
     def __init__(self, key, rules):
         self.key = key
         self.rules = rules
-        regex = b"|".join(b"(" + re.escape(rule[0].encode("ASCII")) + b")" for rule in rules)
+        regex = "|".join("(" + re.escape(rule[0]) + ")" for rule in rules)
         self.regex = regex = re.compile(regex)
-        self.replacements = replacements = (None,) + tuple(rule[1].encode("ASCII") for rule in rules)
+        self.replacements = replacements = (None,) + tuple(rule[1] for rule in rules)
         self._replace = partial(regex.subn, lambda mo: replacements[mo.lastindex])
 
     def normalize(self, expr):
@@ -88,11 +97,14 @@ path - string containing of a, b, A, B, with:
 
 explanation = """Note:
 The original and the normalized path should have (approximately)
-the same matrix if normalization is correct, although they may
+the same matrix and dual matrix if normalization is correct, although they may
 differ to a factor -1, i.e. one is the negative of the other."""
 
 def matrix_diff(m1, m2):
     return numpy.abs(m1-m2).max()
+
+def matrix_error(m1, m2):
+    return min(matrix_diff(m1, m2), matrix_diff(m1, -m2))
 
 def main():
     import sys
@@ -115,15 +127,15 @@ def main():
         for p, q in sorted(rules.keys()):
             sys.stderr.write("p={}, q={}\n".format(p, q))
         sys.exit(1)
-    bpath = path.encode("ASCII")
-    m1 = key.matrix_of_path(bpath)
-    print("Original path: {}\nmatrix:\n{}".format(path, m1))
-    bpath2 = ruleset.normalize(bpath)
-    path2 = bpath2.decode("ASCII")
-    m2 = key.matrix_of_path(bpath2)
-    print("Normalized path: {}\nmatrix:\n{}".format(path2, m2))
-    err = min(matrix_diff(m1, m2), matrix_diff(m1, -m2))
-    print("Error: {}".format(err))
+    m1 = key.matrix_of_path(path)
+    md1 = key.matrix_of_path(path, dual=True)
+    print("Original path: {}\nmatrix:\n{}\ndual matrix:\n{}".format(path, m1, md1))
+    path2 = ruleset.normalize(path)
+    m2 = key.matrix_of_path(path2)
+    md2 = key.matrix_of_path(path2, dual=True)
+    print("Normalized path: {}\nmatrix:\n{}\ndual matrix:\n{}".format(path2, m2, md2))
+    print("Error: {}".format(matrix_error(m1, m2)))
+    print("Dual error: {}".format(matrix_error(md1, md2)))
     print(explanation)
 
 

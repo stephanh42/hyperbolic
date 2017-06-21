@@ -241,17 +241,24 @@ If "path" is not given, a random path is generated.
 This will generate a result similar to this.
 ```
 $ python3 rewriting_system.py 7 3
-Original path: bBaBBBaBaBbBBabbbBBbaBbBBababBBabaBbbababbbaBBaBBbaBbBBbBaBBabaBbbBbbaBabbbaBaBBbBaBbbabBBbbababbbaBBBbBbaBaBbbaBB
+Original path: BaBBBaBbbabbbaBaBbBBBBaBaBBbaBbBBBbaBabBbBabaBbbBbbabBbBbBaBBaBBBBabbabBBBBababbBbabBaBBbBbabbaBbbabbbBabbBBbbabaBbBaBbabbBbB
 matrix:
-[[ -5.18041339 -22.61665683]
- [ -0.21128967  -1.11548355]]
-Normalized path: baBBBaBBBaBBBabbbaBBBaBB
+[[  3.47822237   0.81880492]
+ [-15.99652206  -3.47822237]]
+dual matrix:
+[[-5.68663224  5.02316115]
+ [-6.63681399  5.68663224]]
+Normalized path: BabbbabbbabbbabbaBBab
 matrix:
-[[ -5.18041339 -22.61665683]
- [ -0.21128967  -1.11548355]]
-Error: 6.039613253960852e-14
+[[  3.47822237   0.81880492]
+ [-15.99652206  -3.47822237]]
+dual matrix:
+[[ 5.68663224 -5.02316115]
+ [ 6.63681399 -5.68663224]]
+Error: 2.398081733190338e-14
+Dual error: 1.6786572132332367e-13
 Note:
 The original and the normalized path should have (approximately)
-the same matrix if normalization is correct, although they may
+the same matrix and dual matrix if normalization is correct, although they may
 differ to a factor -1, i.e. one is the negative of the other.
 ```
