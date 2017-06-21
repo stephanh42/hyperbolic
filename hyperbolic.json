@@ -203,6 +203,56 @@
       ]
     ]
   }, 
+  "14, 7": {
+    "q": 7, 
+    "p": 14, 
+    "rules": [
+      [
+        "bB", 
+        ""
+      ], 
+      [
+        "Bb", 
+        ""
+      ], 
+      [
+        "aa", 
+        ""
+      ], 
+      [
+        "A", 
+        "a"
+      ], 
+      [
+        "bbbbbbbb", 
+        "BBBBBB"
+      ], 
+      [
+        "BBBBBBB", 
+        "bbbbbbb"
+      ], 
+      [
+        "abababa", 
+        "BaBaBaB"
+      ], 
+      [
+        "aBaBaBa", 
+        "bababab"
+      ], 
+      [
+        "abababbababab", 
+        "BaBaBaBBaBaBa"
+      ], 
+      [
+        "aBaBaBBaBaBaB", 
+        "babababbababa"
+      ], 
+      [
+        "aBaBaBBaBaBabbbbbbb", 
+        "babababbababaBBBBBB"
+      ]
+    ]
+  }, 
   "8, 8": {
     "q": 8, 
     "p": 8, 
