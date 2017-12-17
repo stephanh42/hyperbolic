@@ -49,6 +49,48 @@
       ]
     ]
   }, 
+  "4, 6": {
+    "q": 6, 
+    "p": 4, 
+    "rules": [
+      [
+        "bB", 
+        ""
+      ], 
+      [
+        "Bb", 
+        ""
+      ], 
+      [
+        "aa", 
+        ""
+      ], 
+      [
+        "A", 
+        "a"
+      ], 
+      [
+        "bbb", 
+        "B"
+      ], 
+      [
+        "BB", 
+        "bb"
+      ], 
+      [
+        "aBaBaB", 
+        "bababa"
+      ], 
+      [
+        "ababab", 
+        "BaBaBa"
+      ], 
+      [
+        "aBaBabb", 
+        "bababaB"
+      ]
+    ]
+  }, 
   "7, 3": {
     "q": 3, 
     "p": 7, 
@@ -108,6 +150,90 @@
       [
         "aBBabbbaBBabbb", 
         "babbaBBabbaBBB"
+      ]
+    ]
+  }, 
+  "4, 8": {
+    "q": 8, 
+    "p": 4, 
+    "rules": [
+      [
+        "bB", 
+        ""
+      ], 
+      [
+        "Bb", 
+        ""
+      ], 
+      [
+        "aa", 
+        ""
+      ], 
+      [
+        "A", 
+        "a"
+      ], 
+      [
+        "bbb", 
+        "B"
+      ], 
+      [
+        "BB", 
+        "bb"
+      ], 
+      [
+        "aBaBaBaB", 
+        "babababa"
+      ], 
+      [
+        "abababab", 
+        "BaBaBaBa"
+      ], 
+      [
+        "aBaBaBabb", 
+        "babababaB"
+      ]
+    ]
+  }, 
+  "6, 4": {
+    "q": 4, 
+    "p": 6, 
+    "rules": [
+      [
+        "bB", 
+        ""
+      ], 
+      [
+        "Bb", 
+        ""
+      ], 
+      [
+        "aa", 
+        ""
+      ], 
+      [
+        "A", 
+        "a"
+      ], 
+      [
+        "bbbb", 
+        "BB"
+      ], 
+      [
+        "BBB", 
+        "bbb"
+      ], 
+      [
+        "aBaB", 
+        "baba"
+      ], 
+      [
+        "abab", 
+        "BaBa"
+      ], 
+      [
+        "aBabbb", 
+        "babaBB"
       ]
     ]
   }, 
